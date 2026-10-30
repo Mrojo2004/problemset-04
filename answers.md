@@ -63,7 +63,7 @@ Using division, we do a constant amount of work for each of the k+1 denomination
 - **4a. (2 pts)** Fortuito counter example proof
 Counterexample: coins {1, 3, 4} and N=6.
 
-Greedy takes the largest coin that fits: 4, then 1, then 1, then 3 coins. But 3 + 3 = 6 uses only 2 coins. As a result, greedy is not optimal. 
+Greedy takes the largest coin that fits: 4, then 1, then 1, for 3 coins. But 3 + 3 = 6 uses only 2 coins. As a result, greedy is not optimal. 
 
 
 - **4b. (3 pts)** Optimal substructure property
@@ -91,7 +91,7 @@ So, as a result, the span is O(N log k).
 - **5a. (4 pts)** Weighted task selection: Optimal substructure?
 Yes, optimal substructure holds.
 Sort the tasks by finish time and relabel them 1..n, so f_1 <= f_2 <= ... <= f_n. 
-Let p(j) be the largest index i < j with f_i <= s_j (the last task that doesn't overlap task j), or 0 if there is none. Let OPT(j) be the max value using only tasks 1..j.
+Let p(j) be the largest index i < j with f_i <= s_j (the last task that doesn't overlap task j), or 0 if there is none. Let OPT(j) be the max value using only tasks 1..j-1.
 
 Claim: Let S be an optimal solution for tasks 1..j.
 - if S contains task j, then S minus task j is optimal for tasks 1..p(j).
